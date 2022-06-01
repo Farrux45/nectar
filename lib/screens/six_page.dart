@@ -4,7 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:nectar_app/core/_widget/image_cont_button.dart';
 import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
-import 'package:nectar_app/screens/log_in_page.dart';
+import 'package:nectar_app/screens/logIn_page.dart';
+
 
 class SixPage extends StatelessWidget {
   const SixPage({Key? key}) : super(key: key);
@@ -115,9 +116,9 @@ class SixPage extends StatelessWidget {
                 Navigator.pushAndRemoveUntil(context,
                     MaterialPageRoute(builder: (context) {
                   return const LoginInPage();
-                }), (route) => false);
+                },), (route) => false);
               },
-            )
+            ),
           ],
         ),
       ),
