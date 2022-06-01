@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:nectar_app/core/_widget/intl_phone_field.dart';
 import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
-import 'package:nectar_app/screens/five_page.dart';
+import 'package:nectar_app/screens/NumberPone/view/components/intl_phone_field.dart';
+import 'package:nectar_app/screens/verification/view/verification_page.dart';
 
-class FourPage extends StatelessWidget {
-  const FourPage({Key? key}) : super(key: key);
+
+class PhoneNumberPage extends StatelessWidget {
+  const PhoneNumberPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class FourPage extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(top: context.h * 0.01),
-            child: IntlPhoneFieldWidget(),
+            child: const IntlPhoneFieldWidget(),
           ),
         ],
       ),
@@ -62,7 +63,7 @@ class FourPage extends StatelessWidget {
         ),
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return FivePage();
+            return const VerificationPage();
           },),);
         },
       ),

@@ -1,18 +1,19 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:nectar_app/core/_widget/image_cont_button.dart';
 import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
-import 'package:nectar_app/screens/third_page.dart';
+import 'package:nectar_app/screens/sign_in/view/third_page.dart';
+import 'package:nectar_app/screens/widget/image_cont_button.dart';
 
-class SecondPage extends StatefulWidget {
-  const SecondPage({Key? key}) : super(key: key);
+
+class OnBoarding extends StatefulWidget {
+  const OnBoarding({Key? key}) : super(key: key);
 
   @override
-  State<SecondPage> createState() => _SecondPageState();
+  State<OnBoarding> createState() => _OnBoardingState();
 }
 
-class _SecondPageState extends State<SecondPage> {
+class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +84,7 @@ class _SecondPageState extends State<SecondPage> {
                 onTap: () {
                   Navigator.pushAndRemoveUntil(context,
                       MaterialPageRoute(builder: (context) {
-                    return ThirdPage();
+                    return SignIn();
                   }), (route) => false);
                 },
               ),

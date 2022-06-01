@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nectar_app/screens/home_page.dart';
-import 'package:nectar_app/screens/second_page.dart';
+import 'package:nectar_app/screens/splash_screen/view/splash_screen_page.dart';
+
 
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }

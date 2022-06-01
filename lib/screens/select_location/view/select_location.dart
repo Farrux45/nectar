@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:nectar_app/core/_widget/image_cont_button.dart';
 import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
-import 'package:nectar_app/screens/logIn_page.dart';
+import 'package:nectar_app/screens/log_in/view/logIn_page.dart';
+import 'package:nectar_app/screens/widget/image_cont_button.dart';
 
 
-class SixPage extends StatelessWidget {
-  const SixPage({Key? key}) : super(key: key);
+class SelectLocation extends StatelessWidget {
+  const SelectLocation({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

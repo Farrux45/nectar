@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:nectar_app/core/_widget/image_cont_button.dart';
-import 'package:nectar_app/core/_widget/intl_phone_field.dart';
+import 'package:intl_phone_field/phone_number.dart';
 import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
-import 'package:nectar_app/screens/four_page.dart';
+import 'package:nectar_app/screens/NumberPone/view/components/intl_phone_field.dart';
+import 'package:nectar_app/screens/NumberPone/view/phone_number_page.dart';
+import 'package:nectar_app/screens/widget/image_cont_button.dart';
 
-class ThirdPage extends StatelessWidget {
-  ThirdPage({
+
+
+class SignIn extends StatelessWidget {
+  SignIn({
     Key? key,
   }) : super(key: key);
 
@@ -77,7 +80,7 @@ class ThirdPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return FourPage();
+                        return const PhoneNumberPage();
                       },
                     ),
                   );
@@ -98,7 +101,7 @@ class ThirdPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return FourPage();
+                        return const PhoneNumberPage();
                       },
                     ),
                   );

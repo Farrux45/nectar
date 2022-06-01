@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:nectar_app/core/_widget/intl_phone_field.dart';
 import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
-import 'package:nectar_app/screens/six_page.dart';
+import 'package:nectar_app/screens/select_location/view/select_location.dart';
 
-class FivePage extends StatelessWidget {
-  const FivePage({Key? key}) : super(key: key);
+
+class VerificationPage extends StatelessWidget {
+  const VerificationPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class FivePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return const SixPage();
+                            return const SelectLocation();
                           },
                         ),
                       );
