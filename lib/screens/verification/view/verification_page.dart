@@ -3,8 +3,9 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
+import 'package:nectar_app/screens/log_in/view/components/my_text_widget.dart';
+import 'package:nectar_app/screens/log_in/view/components/text_form_field_widget.dart';
 import 'package:nectar_app/screens/select_location/view/select_location.dart';
-
 
 class VerificationPage extends StatelessWidget {
   const VerificationPage({Key? key}) : super(key: key);
@@ -21,63 +22,40 @@ class VerificationPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: context.h * 0.04,
-                right: context.w * 0.09,
-              ),
-              child: Text(
-                "Enter your 4-digit code",
-                style: TextStyle(
-                  color: ColorConst.black,
-                  fontSize: context.w * 0.07,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+            TextWidget(
+              text: "Enter your 4-digit code",
+              color: ColorConst.black,
+              textSize: context.w * 0.050,
             ),
             SizedBox(
-              height: context.h * 0.04,
+              height: context.h * 0.02,
             ),
             Padding(
               padding: EdgeInsets.only(
-                right: context.w * 0.78,
+                right: context.w * 0.85,
               ),
-              child: Text(
-                "Code",
-                style: TextStyle(
-                  color: ColorConst.grey,
-                  fontSize: context.w * 0.04,
-                ),
+              child: TextWidget(
+                text: "Code",
+                color: ColorConst.grey,
+                
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: context.w * 0.06),
-              child: TextFormField(
-                controller: _numberController,
-                decoration: InputDecoration(
-                  hintText: "__ __ __ __",
-                  fillColor: ColorConst.grey,
-                ),
-              ),
+            TFW(
+              keybordType: TextInputType.number,
+              userPasswordController: _numberController,
+             lText:  "__ __ __ __",
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: context.h * 0.6,
-                left: context.w * 0.03,
-                right: context.w * 0.03,
-              ),
+            SizedBox(height: context.h * 0.58
+            ,),
+            Container(
+              height: context.h * 0.08,
+              width: context.w * 0.95,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Reset code",
-                    style: TextStyle(
-                      color: ColorConst.green,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                  TextWidget(text: "Reset code", color: ColorConst.green,),
                   FloatingActionButton(
                     onPressed: () {
                       Navigator.push(

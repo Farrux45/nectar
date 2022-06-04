@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
 import 'package:nectar_app/screens/NumberPone/view/components/intl_phone_field.dart';
+import 'package:nectar_app/screens/log_in/view/components/my_text_widget.dart';
 import 'package:nectar_app/screens/verification/view/verification_page.dart';
-
 
 class PhoneNumberPage extends StatelessWidget {
   const PhoneNumberPage({Key? key}) : super(key: key);
@@ -22,32 +22,26 @@ class PhoneNumberPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(
-              top: context.h * 0.04,
-              left: context.w * 0.02,
-            ),
-            child: Text(
-              "Enter your mobile number",
-              style: TextStyle(
-                color: ColorConst.black,
-                fontSize: context.w * 0.07,
-                fontWeight: FontWeight.w600,
+              padding: EdgeInsets.only(
+                top: context.h * 0.01,
+                right: context.w * 0.23,
               ),
-            ),
-          ),
+              child: TextWidget(
+                text: "Enter your mobile number",
+                color: ColorConst.black,
+                textSize: context.w * 0.055,
+              )),
           SizedBox(
-            height: context.h * 0.04,
+            height: context.h * 0.02,
           ),
           Padding(
             padding: EdgeInsets.only(
-              right: context.w * 0.58,
+              right: context.w * 0.70,
             ),
-            child: Text(
-              "Mobile Number",
-              style: TextStyle(
-                color: ColorConst.grey,
-                fontSize: context.w * 0.04,
-              ),
+            child: TextWidget(
+              text: "Mobile Number",
+              color: ColorConst.grey,
+              textSize: context.w * 0.030,
             ),
           ),
           Padding(
@@ -62,9 +56,14 @@ class PhoneNumberPage extends StatelessWidget {
           Icons.arrow_forward_ios_outlined,
         ),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const VerificationPage();
-          },),);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const VerificationPage();
+              },
+            ),
+          );
         },
       ),
     );

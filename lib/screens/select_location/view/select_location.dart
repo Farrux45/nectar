@@ -3,9 +3,10 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
-import 'package:nectar_app/screens/log_in/view/logIn_page.dart';
+import 'package:nectar_app/screens/log_in/view/components/my_text_widget.dart';
+import 'package:nectar_app/screens/log_in/view/components/text_form_field_widget.dart';
+import 'package:nectar_app/screens/log_in/view/log_in_page.dart.dart';
 import 'package:nectar_app/screens/widget/image_cont_button.dart';
-
 
 class SelectLocation extends StatelessWidget {
   const SelectLocation({Key? key}) : super(key: key);
@@ -13,6 +14,8 @@ class SelectLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextEditingController _textController = TextEditingController();
+    final TextEditingController _userController = TextEditingController();
+    
 
     return Scaffold(
       appBar: AppBar(
@@ -24,6 +27,7 @@ class SelectLocation extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
               child: Container(
@@ -36,75 +40,35 @@ class SelectLocation extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              "Select Your Location",
-              style: TextStyle(
-                color: ColorConst.black,
-                fontSize: context.w * 0.05,
-                fontWeight: FontWeight.w600,
-              ),
+            TextWidget(
+              text: "Select Your Location",
+              color: ColorConst.grey,
+              textSize: context.h * 0.035,
             ),
             SizedBox(
               height: context.h * 0.02,
             ),
-           Container(
-              width: context.w * 0.8,
-              child: Text(
-                "Swithch on your location to stay in tune with what’s happening in your area",
-                style: TextStyle(
-                    color: ColorConst.grey,
-                    fontWeight: FontWeight.w600,
-                    fontSize: context.w * 0.035),
-                textAlign: TextAlign.center,
-              ),
+            Container(
+                width: context.w * 0.8,
+                child: TextWidget(
+                  text:
+                      "Swithch on your location to stay in tune with what’s happening in your area",
+                )),
+            TextWidget(
+              text: "Your Zone",
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: context.h * 0.08,
-                right: context.w * 0.7,
-              ),
-              child: Text(
-                "Your Zone",
-                style: TextStyle(
-                  color: ColorConst.grey,
-                  fontSize: context.w * .035,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+            TFW(
+              keybordType: TextInputType.name,
+              userPasswordController: _textController,
+              icon: Icons.keyboard_arrow_down_outlined,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: context.w * 0.06),
-              child: TextFormField(
-                controller: _textController,
-                decoration: const InputDecoration(
-                  hintText: "Types of your zone",
-                  suffixIcon: Icon(Icons.keyboard_arrow_down_outlined),
-                ),
-              ),
+            TextWidget(
+              text: "Your Area",
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: context.h * 0.03,
-                right: context.w * 0.7,
-              ),
-              child: Text(
-                "Your Area",
-                style: TextStyle(
-                  color: ColorConst.grey,
-                  fontSize: context.w * .035,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: context.w * 0.06),
-              child: TextFormField(
-                controller: _textController,
-                decoration: const InputDecoration(
-                  hintText: "Types of your area",
-                  suffixIcon: Icon(Icons.keyboard_arrow_down_outlined),
-                ),
-              ),
+            TFW(
+              keybordType: TextInputType.name,
+              userPasswordController: _userController,
+              icon: Icons.keyboard_arrow_down_outlined,
             ),
             SizedBox(
               height: context.h * 0.08,
@@ -113,10 +77,11 @@ class SelectLocation extends StatelessWidget {
               name: "Submit",
               color: ColorConst.green,
               onTap: () {
-                Navigator.pushAndRemoveUntil(context,
-                    MaterialPageRoute(builder: (context) {
-                  return const LoginInPage();
-                },), (route) => false);
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                  builder: (context) {
+                    return const LoginInPage();
+                  },
+                ), (route) => false);
               },
             ),
           ],

@@ -3,8 +3,12 @@ import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
 
 class MyStack extends StatelessWidget {
-  const MyStack({
+  final text;
+  final text2;
+  MyStack({
     Key? key,
+    this.text,
+    this.text2,
   }) : super(key: key);
 
   @override
@@ -33,7 +37,7 @@ class MyStack extends StatelessWidget {
           top: context.h * 0.28,
           left: context.w * 0.06,
           child: Text(
-            "Loging",
+           text ?? " ",
             style: TextStyle(
               fontSize: context.w * 0.05,
               fontWeight: FontWeight.w600,
@@ -44,7 +48,7 @@ class MyStack extends StatelessWidget {
           top: context.h * 0.32,
           left: context.w * 0.06,
           child: Text(
-            "Enter your emails and password",
+            text2 ?? "",
             style: TextStyle(
               color: ColorConst.grey,
               fontSize: context.w * 0.03,

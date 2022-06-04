@@ -6,9 +6,8 @@ import 'package:nectar_app/core/constants/color_const.dart';
 import 'package:nectar_app/core/extension/extension_page.dart';
 import 'package:nectar_app/screens/NumberPone/view/components/intl_phone_field.dart';
 import 'package:nectar_app/screens/NumberPone/view/phone_number_page.dart';
+import 'package:nectar_app/screens/log_in/view/components/my_text_widget.dart';
 import 'package:nectar_app/screens/widget/image_cont_button.dart';
-
-
 
 class SignIn extends StatelessWidget {
   SignIn({
@@ -27,24 +26,19 @@ class SignIn extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(
-                left: context.w * 0.06,
-                
+                left: context.w * 0.004,
               ),
               child: Container(
-                height: context.h * 0.1,
+                height: context.h * 0.11,
                 width: context.w * 0.7,
-                child: Text(
-                  "Get your groceries with nectar",
-                  style: TextStyle(
-                    color: ColorConst.black,
-                    fontSize: context.w * 0.075,
-                    fontWeight: FontWeight.w600,
-                  ),
+                child: TextWidget(
+                  text: "Get your groceries with nectar",
+                  textSize: context.w * 0.058,
                 ),
               ),
             ),
             SizedBox(
-              height: context.w * 0.07,
+              height: context.w * 0.02,
             ),
             IntlPhoneFieldWidget(),
             Divider(
@@ -54,17 +48,13 @@ class SignIn extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(
-                top: context.h * 0.04,
-                left: context.w * 0.28,
+                top: context.h * 0.005,
+                left: context.w * 0.15,
               ),
-              child: Text(
-                "Or connect with social media",
-                style: TextStyle(
+              child: TextWidget(
+                  text: "Or connect with social media",
                   color: ColorConst.grey,
-                  fontSize: context.w * 0.030,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+                  textSize: context.w * 0.040),
             ),
             Padding(
               padding: EdgeInsets.only(
@@ -114,4 +104,3 @@ class SignIn extends StatelessWidget {
     );
   }
 }
-

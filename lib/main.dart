@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar_app/screens/select_location/view/select_location.dart';
 import 'package:nectar_app/screens/splash_screen/view/splash_screen_page.dart';
 
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: const SelectLocation(),
     );
   }
 }
